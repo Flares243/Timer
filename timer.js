@@ -2,6 +2,108 @@ var times = [0, 0, 0, 0, 0];
 var startCount;
 var digit = document.getElementsByClassName('digit');
 
+var number = {
+	0 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[3].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[4].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
+	},
+
+	1 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[1].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[3].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[6].style.backgroundColor = "hsl(0, 100%, 95%)";
+	},
+
+	2 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[1].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[4].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[5].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
+	},
+
+	3 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[1].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
+	},
+
+	4 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[6].style.backgroundColor = "hsl(0, 100%, 95%)";
+	},
+
+	5 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[2].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
+	},
+
+	6 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[2].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[4].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
+	},
+
+	7 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[1].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[3].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[6].style.backgroundColor = "hsl(0, 100%, 95%)";
+	},
+
+	8 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[4].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
+	},
+
+	9 : function(ele) {
+		ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
+		ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
+		ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
+	}
+}
+
 function start()
 {
 	clearInterval(startCount);
@@ -18,134 +120,6 @@ function reset()
 	times = [0, 0, 0, 0, 0];
 	display();
 	stop();
-}
-
-function adjust(ele, t)
-{
-	t += '';
-
-	switch(t)
-	{
-		case '0':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[3].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[4].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
-			break;
-		}
-
-		case '1':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[1].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[3].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[6].style.backgroundColor = "hsl(0, 100%, 95%)";
-			break;
-		}
-
-		case '2':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[1].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[4].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[5].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
-			break;
-		}
-
-		case '3':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[1].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
-			break;
-		}
-
-		case '4':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[6].style.backgroundColor = "hsl(0, 100%, 95%)";
-			break;
-		}
-
-		case '5':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[2].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
-			break;
-		}
-
-		case '6':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[2].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[4].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
-			break;
-		}
-
-		case '7':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[1].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[3].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[6].style.backgroundColor = "hsl(0, 100%, 95%)";
-			break;
-		}
-
-		case '8':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[4].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
-			break;
-		}
-
-		case '9':
-		{
-			ele[0].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[1].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[2].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[3].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[4].style.backgroundColor = "hsl(0, 100%, 95%)";
-			ele[5].style.backgroundColor = "hsl(0, 67%, 58%)";
-			ele[6].style.backgroundColor = "hsl(0, 67%, 58%)";
-			break;
-		}
-	}
 }
 
 async function run()
@@ -184,9 +158,9 @@ function calcu()
 
 	if (times[0] == 10)
 	{
+		stop();
 		times = [9, 9, 9, 9, 9];
 		display();
-		stop();
 	}
 }
 
@@ -194,6 +168,6 @@ function display()
 {
 	for (let i = 4; i > -1; i--)
 	{
-		adjust(digit[i].children, times[i]);
+		number[times[i]](digit[i].children);
 	}
 }

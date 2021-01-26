@@ -1,0 +1,146 @@
+*,
+*::after,
+*::before
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.main-container
+{
+	position: relative;
+	display: inline-block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	margin-top: 100px;
+}
+
+.digit
+{
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 208px;
+	margin: 0 30px;
+}
+
+.slide-bar
+{
+	position: absolute;
+	height: 10px;
+	width: 100px;
+	border-radius: 5px;
+	background-color: hsl(0, 67%, 58%);
+}
+
+.slide-bar1
+{
+	bottom: 100%;
+}
+
+.slide-bar2
+{
+	height: 100px;
+	width: 10px;
+	right: 100%;
+}
+
+.slide-bar3
+{
+	height: 100px;
+	width: 10px;
+	left: 100%;
+}
+
+.slide-bar4
+{
+	background-color: hsl(0, 100%, 95%);
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.slide-bar5
+{
+	height: 100px;
+	width: 10px;
+	right: 100%;
+	bottom: 0;
+}
+
+.slide-bar6
+{
+	height: 100px;
+	width: 10px;
+	left: 100%;
+	bottom: 0;
+}
+
+.slide-bar7
+{
+	top: 100%;
+}
+
+p
+{
+	text-align: center;
+}
+
+.blue
+{
+	color: white;
+	background-color: blue;
+}
+
+.red
+{
+	color: white;
+	background-color: red;
+}
+
+.yellow
+{
+	background-color: yellow;
+}
+
+button
+{
+	border: none;
+	margin: 50px;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: gray 0px 0px 6px;
+}
+
+.dot
+{
+	display: inline-block;
+	height: 208px;
+	margin: 0 15px;
+	position: relative;
+}
+
+.dot > div
+{
+	position: absolute;
+	background-color: hsl(0, 67%, 58%);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+.dot1
+{
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.dot2
+{
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
